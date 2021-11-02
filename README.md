@@ -3,8 +3,7 @@ iOS 당근마켓 클론코딩 repo 🥕
 Sopt 29기 왕초보스터디에서 시작한 당근 사업 .. 과연 성공적인 수확을 할 수 있을지 ! 
 
 
-<img src="https://user-images.githubusercontent.com/81313960/139918135-14c2cbd5-3283-41a8-81f9-341437971299.jpg"  width="500">
-
+<img src="https://user-images.githubusercontent.com/81313960/139932433-e762aecc-40b4-4fff-913a-2904c6afa278.jpeg"  width="700">
 
 
 ### 🥕 당근마켓 클론코딩을 하는 이유 ? 
