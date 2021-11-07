@@ -34,7 +34,7 @@ class CustomTabBarController: UITabBarController {
     }
     
     func setTabBarStyle() {
-        tabBar.barTintColor = .white
+        tabBar.backgroundColor = .white
         tabBar.tintColor = .black
     }
 }
