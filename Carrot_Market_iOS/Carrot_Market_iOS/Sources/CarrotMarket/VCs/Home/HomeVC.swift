@@ -11,6 +11,7 @@ class HomeVC: UIViewController {
     
     @IBOutlet weak var customNavigationBar: UIView!
     @IBOutlet weak var itemTableView: UITableView!
+    @IBOutlet weak var plusButton: UIButton!
     
     var itemList: [ItemData] = []
     
@@ -19,6 +20,7 @@ class HomeVC: UIViewController {
         initNavigationBar()
         initDataList()
         setTableView()
+        setPlusButton()
     }
     
     func initDataList(){
@@ -37,6 +39,16 @@ class HomeVC: UIViewController {
         
         let itemXib = UINib(nibName: ItemTVC.identifier , bundle: nil)
         itemTableView.register(itemXib, forCellReuseIdentifier: ItemTVC.identifier )
+    }
+    
+    func setPlusButton(){
+        itemTableView.addSubview(plusButton)
+        
+        plusButton.translatesAutoresizingMaskIntoConstraints = false
+        plusButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 303).isActive = true
+        plusButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 659).isActive = true
+        plusButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 100).isActive = true
+        plusButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 17 ).isActive = true
     }
 }
 
