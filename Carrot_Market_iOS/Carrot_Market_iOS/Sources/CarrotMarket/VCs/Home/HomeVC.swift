@@ -1,0 +1,95 @@
+//
+//  HomeVC.swift
+//  Carrot_Market_iOS
+//
+//  Created by 김수연 on 2021/11/03.
+//
+
+import UIKit
+
+class HomeVC: UIViewController {
+    
+    @IBOutlet weak var customNavigationBar: UIView!
+    @IBOutlet weak var itemTableView: UITableView!
+    
+    var itemList: [ItemData] = []
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        initNavigationBar()
+        initDataList()
+        setTableView()
+    }
+    
+    func initDataList(){
+        itemList.append(contentsOf: [
+            ItemData(thumnailImageName: "photo", itemName: "킹받아요 인생네컷", locationName: "성신여대", uploadDate: "30초", itemPrice: "4,000원", likeNumber: 5),
+            ItemData(thumnailImageName: "applewatch", itemName: "애플워치 3세대", locationName: "상일동", uploadDate: "5분", itemPrice: "100,000원", likeNumber: 4),
+            ItemData(thumnailImageName: "book", itemName: "이코테 파이썬 책", locationName: "천호동", uploadDate: "3시간", itemPrice: "10,000원", likeNumber: 9),
+            ItemData(thumnailImageName: "ikea", itemName: "이케아 코끼리 인형", locationName: "수서동", uploadDate: "17시간", itemPrice: "8,000원", likeNumber: 1),
+            ItemData(thumnailImageName: "airpod", itemName: "에어팟 프로 케이스", locationName: "풍산동", uploadDate: "1일", itemPrice: "7,000원", likeNumber: 3)
+        ])
+    }
+    
+    func setTableView(){
+        itemTableView.dataSource = self
+        itemTableView.delegate = self
+        
+        let itemXib = UINib(nibName: ItemTVC.identifier , bundle: nil)
+        itemTableView.register(itemXib, forCellReuseIdentifier: ItemTVC.identifier )
+    }
+}
+
+extension HomeVC {
+    private func initNavigationBar() {
+        guard let loadedNib = Bundle.main.loadNibNamed(String(describing: CustomNavigationBar.self), owner: self, options: nil) else { return }
+        guard let navigationBar = loadedNib.first as? CustomNavigationBar else { return }
+        
+        navigationBar.frame = CGRect(x: 0, y: 0, width: customNavigationBar.frame.width, height: customNavigationBar.frame.height)
+        customNavigationBar.addSubview(navigationBar)
+        
+        navigationBar.locationLabel.text = "상일동"
+        navigationBar.locationLabel.textAlignment = .center
+        navigationBar.locationLabel.sizeToFit()
+    }
+}
+
+extension HomeVC: UITableViewDelegate{
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 145
+    }
+}
+
+extension HomeVC: UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return itemList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: ItemTVC.identifier) as? ItemTVC else {return UITableViewCell()}
+        
+        cell.setData(itemData: itemList[indexPath.row])
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        // 셀 선택 해제 
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        guard let detailVC = UIStoryboard(name: "Detail", bundle: nil).instantiateViewController(withIdentifier: "ItemDetailVC") as? ItemDetailVC else { return }
+ 
+        detailVC.modalPresentationStyle = .fullScreen
+        detailVC.modalTransitionStyle = .crossDissolve
+        
+        // 셀 선택 시 데이터 전달
+        detailVC.itemName = itemList[indexPath.row].itemName
+        detailVC.uploadDate = itemList[indexPath.row].uploadDate
+        detailVC.locationName = itemList[indexPath.row].locationName
+        detailVC.itemPrice = itemList[indexPath.row].itemPrice
+        detailVC.likeNumber = itemList[indexPath.row].likeNumber
+        
+        self.present(detailVC, animated: true, completion: nil)
+    }
+    
+}
