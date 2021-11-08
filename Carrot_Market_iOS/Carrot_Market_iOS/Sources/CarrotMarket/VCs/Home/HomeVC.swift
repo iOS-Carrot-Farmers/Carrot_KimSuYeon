@@ -99,13 +99,10 @@ extension HomeVC: UITableViewDataSource{
         detailVC.modalTransitionStyle = .crossDissolve
         
         // 셀 선택 시 데이터 전달
-        detailVC.itemName = itemList[indexPath.row].itemName
-        detailVC.uploadDate = itemList[indexPath.row].uploadDate
-        detailVC.locationName = itemList[indexPath.row].locationName
-        detailVC.itemPrice = itemList[indexPath.row].itemPrice
-        detailVC.likeNumber = itemList[indexPath.row].likeNumber
+        detailVC.itemList = itemList[indexPath.row]
         
         self.present(detailVC, animated: true, completion: nil)
+        //self.navigaitonController?.pushViewController(detailVC, animated: true)
     }
     
 }
