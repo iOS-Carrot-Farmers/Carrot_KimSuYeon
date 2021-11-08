@@ -16,6 +16,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ol3-l3-M33">
+                                <rect key="frame" x="301" y="657" width="57" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="57" id="qMp-ty-rU9"/>
+                                    <constraint firstAttribute="height" constant="55" id="zQj-JR-vu7"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Button" image="plusButton"/>
+                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="59C-bp-joF" customClass="CustomNavigationBar" customModule="Carrot_Market_iOS" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="37" width="375" height="44"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -28,30 +37,25 @@
                                 <rect key="frame" x="0.0" y="91" width="375" height="721"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="jiP-N1-XTi">
-                                <rect key="frame" x="303" y="659" width="55" height="53"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" image="plusButton"/>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="4Th-u2-wNk"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="59C-bp-joF" firstAttribute="top" secondItem="jOM-Fj-Ou8" secondAttribute="top" constant="37" id="8y1-cZ-AKt"/>
                             <constraint firstAttribute="bottom" secondItem="WKp-5e-YgS" secondAttribute="bottom" id="9LG-E7-bGA"/>
+                            <constraint firstAttribute="bottom" secondItem="Ol3-l3-M33" secondAttribute="bottom" constant="100" id="PA9-t3-Lax"/>
                             <constraint firstItem="WKp-5e-YgS" firstAttribute="top" secondItem="59C-bp-joF" secondAttribute="bottom" constant="10" id="Rum-s0-9ib"/>
                             <constraint firstItem="59C-bp-joF" firstAttribute="leading" secondItem="jOM-Fj-Ou8" secondAttribute="leading" id="bFl-gS-TZR"/>
+                            <constraint firstAttribute="trailing" secondItem="Ol3-l3-M33" secondAttribute="trailing" constant="17" id="dgb-Gs-GCN"/>
                             <constraint firstAttribute="trailing" secondItem="59C-bp-joF" secondAttribute="trailing" id="iZt-av-6L9"/>
                             <constraint firstAttribute="trailing" secondItem="WKp-5e-YgS" secondAttribute="trailing" id="ja3-Pe-A5G"/>
                             <constraint firstItem="WKp-5e-YgS" firstAttribute="leading" secondItem="jOM-Fj-Ou8" secondAttribute="leading" id="qpg-Dp-TOC"/>
-                            <constraint firstItem="jiP-N1-XTi" firstAttribute="top" secondItem="jOM-Fj-Ou8" secondAttribute="top" constant="659" id="v0z-Wf-vTF"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="customNavigationBar" destination="59C-bp-joF" id="h0e-Yf-puX"/>
                         <outlet property="itemTableView" destination="WKp-5e-YgS" id="psF-TJ-XTA"/>
-                        <outlet property="plusButton" destination="jiP-N1-XTi" id="Jah-gU-8tN"/>
+                        <outlet property="plusButton" destination="Ol3-l3-M33" id="Di2-03-J0x"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bUR-bC-R9G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -42,13 +42,17 @@ class HomeVC: UIViewController {
     }
     
     func setPlusButton(){
-        itemTableView.addSubview(plusButton)
-        
-        plusButton.translatesAutoresizingMaskIntoConstraints = false
-        plusButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 303).isActive = true
-        plusButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 659).isActive = true
-        plusButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 100).isActive = true
-        plusButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 17 ).isActive = true
+//        let plusButton = UIButton()
+//
+//        plusButton.setImage(UIImage(named: "plusButton"), for: .normal)
+//        view.addSubview(plusButton)
+        self.view.bringSubviewToFront(plusButton)
+//
+//        plusButton.translatesAutoresizingMaskIntoConstraints = false
+//        plusButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 303).isActive = true
+//        plusButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 659).isActive = true
+//        plusButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 100).isActive = true
+//        plusButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 17 ).isActive = true
     }
 }
 
