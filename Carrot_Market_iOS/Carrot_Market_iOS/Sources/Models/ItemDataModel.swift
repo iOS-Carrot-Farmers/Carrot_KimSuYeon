@@ -20,3 +20,13 @@ struct ItemData{
         return UIImage(named: thumnailImageName)
     }
 }
+
+struct SellItemData{
+    let thumnailImageName: String
+    let itemName: String
+    let itemPrice: String
+    
+    func makeThumnailImage() -> UIImage? {
+        return UIImage(named: thumnailImageName)
+    }
+}
