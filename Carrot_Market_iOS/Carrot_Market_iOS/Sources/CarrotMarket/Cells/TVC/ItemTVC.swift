@@ -44,7 +44,7 @@ extension ItemTVC {
         itemNameLabel.font = UIFont(name: "SFProDisplay-Regular", size: 17)
         
         descriptionLabel.textColor = UIColor(red: 0.573, green: 0.588, blue: 0.616, alpha: 1)
-        descriptionLabel.font = UIFont(name: "SFProDisplay-Regular", size: 14)
+        descriptionLabel.font = UIFont(name: "SFProDisplay-Regular", size: 13)
         priceLabel.font = UIFont(name: "SFProDisplay-Semibold", size: 15)
         likeNumberLabel.textColor = UIColor(red: 0.375, green: 0.375, blue: 0.375, alpha: 1)
         likeNumberLabel.font = UIFont(name: "SFProDisplay-Regular", size: 14)
