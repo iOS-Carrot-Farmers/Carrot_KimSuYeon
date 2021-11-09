@@ -8,7 +8,6 @@
 import UIKit
 
 class SellListCVC: UICollectionViewCell {
-    
     static let identifier = "SellListCVC"
 
     @IBOutlet weak var sellListImage: UIImageView!
@@ -18,7 +17,6 @@ class SellListCVC: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         setUI()
-        // Initialization code
     }
     
     func setData(sellData: SellItemData){
