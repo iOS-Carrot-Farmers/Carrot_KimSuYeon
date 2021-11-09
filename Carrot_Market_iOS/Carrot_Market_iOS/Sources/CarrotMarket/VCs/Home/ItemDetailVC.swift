@@ -127,10 +127,14 @@ extension ItemDetailVC {
             likeNumberLabel.sizeToFit()
         }
         
-        descriptionLabel.text = "배터리 두개에요 쿠리보가 직접 거래해요 !배터리 두개에요 쿠리보가 직접 거래해요 !배터리 두개에요 쿠리보가 직접 거래해요 !"
+        descriptionLabel.text = """
+        배터리 두개에요 쿠리보가 직접 거래해요 ! 배터리 두개에요 쿠리보가 직접 거래해요 !
+        
+        쿨거 하시면 래원의 느린 심   장 박동 실시간으로 들려드립니다.
+        """
         descriptionLabel.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
 
-        descriptionLabel.font = UIFont(name: "SFProDisplay-Regular", size: 14)
+        descriptionLabel.font = UIFont(name: "SFProDisplay-Regular", size: 15)
         
         postNotifyLabel.text = " 이 게시글 신고하기"
         postNotifyLabel.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
