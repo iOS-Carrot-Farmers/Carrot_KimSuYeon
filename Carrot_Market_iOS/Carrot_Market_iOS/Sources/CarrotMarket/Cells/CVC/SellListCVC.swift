@@ -46,8 +46,20 @@ extension ItemDetailVC: UICollectionViewDataSource{
         cell.setData(sellData: sellList[indexPath.row])
         return cell
     }
-    
-    
+    // collection view header
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        switch kind {
+        case UICollectionView.elementKindSectionHeader:
+            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "reusableView", for: indexPath)
+            return headerView
+        default: assert(false, "Don't use this kind")
+        }
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        let width: CGFloat = collectionView.frame.width
+        let height: CGFloat = 60
+        return CGSize(width: width, height: height)
+    }
 }
 
 extension ItemDetailVC: UICollectionViewDelegateFlowLayout{
