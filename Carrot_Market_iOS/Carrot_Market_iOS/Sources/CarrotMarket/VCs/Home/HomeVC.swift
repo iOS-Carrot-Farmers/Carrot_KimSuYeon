@@ -23,6 +23,17 @@ class HomeVC: UIViewController {
         setPlusButton()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+    
     func initDataList(){
         itemList.append(contentsOf: [
             ItemData(thumnailImageName: "photo", itemName: "킹받아요 인생네컷", locationName: "성신여대", uploadDate: "30초", itemPrice: "4,000원", likeNumber: 5),
@@ -95,14 +106,14 @@ extension HomeVC: UITableViewDataSource{
         
         guard let detailVC = UIStoryboard(name: "Detail", bundle: nil).instantiateViewController(withIdentifier: "ItemDetailVC") as? ItemDetailVC else { return }
  
-        detailVC.modalPresentationStyle = .fullScreen
-        detailVC.modalTransitionStyle = .crossDissolve
+        //detailVC.modalPresentationStyle = .overFullScreen
+        //detailVC.modalTransitionStyle = .crossDissolve
         
         // 셀 선택 시 데이터 전달
         detailVC.itemList = itemList[indexPath.row]
         
-        self.present(detailVC, animated: true, completion: nil)
-        //self.navigaitonController?.pushViewController(detailVC, animated: true)
+        //self.present(detailVC, animated: true, completion: nil)
+        self.navigationController?.pushViewController(detailVC, animated: true)
     }
     
 }

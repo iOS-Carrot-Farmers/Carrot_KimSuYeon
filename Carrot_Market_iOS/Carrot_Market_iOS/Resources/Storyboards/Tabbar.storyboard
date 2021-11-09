@@ -8,6 +8,23 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Item-->
+        <scene sceneID="tvp-J5-bLq">
+            <objects>
+                <navigationController storyboardIdentifier="HomeNC" id="uha-fU-NCU" customClass="HomeNC" customModule="Carrot_Market_iOS" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="5uj-9t-hY7"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4Nj-Vp-706">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="CGd-jP-KGW" kind="relationship" relationship="rootViewController" id="SrV-jr-y3h"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="32R-8S-GxJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1852" y="771"/>
+        </scene>
         <!--HomeVC-->
         <scene sceneID="LBY-B6-A34">
             <objects>
@@ -52,6 +69,7 @@
                             <constraint firstItem="WKp-5e-YgS" firstAttribute="leading" secondItem="jOM-Fj-Ou8" secondAttribute="leading" id="qpg-Dp-TOC"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="tBD-br-E6x"/>
                     <connections>
                         <outlet property="customNavigationBar" destination="59C-bp-joF" id="h0e-Yf-puX"/>
                         <outlet property="itemTableView" destination="WKp-5e-YgS" id="psF-TJ-XTA"/>

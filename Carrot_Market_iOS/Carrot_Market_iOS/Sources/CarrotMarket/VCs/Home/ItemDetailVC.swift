@@ -51,6 +51,17 @@ class ItemDetailVC: UIViewController {
         registerCollectionView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+    
 }
 
 extension ItemDetailVC: UIScrollViewDelegate {
@@ -145,7 +156,7 @@ extension ItemDetailVC {
         
         priceSuggestLabel.textColor = UIColor(red: 0.633, green: 0.633, blue: 0.633, alpha: 1)
 
-        priceSuggestLabel.font = UIFont(name: "SFProDisplay-Semibold", size: 11)
+        priceSuggestLabel.font = UIFont(name: "SFProDisplay-Semibold", size: 13)
 
     }
 }
