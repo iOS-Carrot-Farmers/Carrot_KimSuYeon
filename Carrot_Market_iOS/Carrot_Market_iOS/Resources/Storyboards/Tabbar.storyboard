@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1xI-YD-XeC">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Item-->
+        <scene sceneID="tvp-J5-bLq">
+            <objects>
+                <navigationController storyboardIdentifier="HomeNC" id="uha-fU-NCU" customClass="HomeNC" customModule="Carrot_Market_iOS" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="5uj-9t-hY7"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4Nj-Vp-706">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="CGd-jP-KGW" kind="relationship" relationship="rootViewController" id="SrV-jr-y3h"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="32R-8S-GxJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1852" y="771"/>
+        </scene>
+        <!--HomeVC-->
+        <scene sceneID="LBY-B6-A34">
+            <objects>
+                <viewController storyboardIdentifier="HomeVC" id="CGd-jP-KGW" customClass="HomeVC" customModule="Carrot_Market_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jOM-Fj-Ou8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ol3-l3-M33">
+                                <rect key="frame" x="301" y="657" width="57" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="57" id="qMp-ty-rU9"/>
+                                    <constraint firstAttribute="height" constant="55" id="zQj-JR-vu7"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Button" image="plusButton"/>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="59C-bp-joF" customClass="CustomNavigationBar" customModule="Carrot_Market_iOS" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="37" width="375" height="44"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="375" id="6Db-or-Wa7"/>
+                                    <constraint firstAttribute="height" constant="44" id="SB1-mR-ysq"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="WKp-5e-YgS">
+                                <rect key="frame" x="0.0" y="91" width="375" height="721"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="4Th-u2-wNk"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="59C-bp-joF" firstAttribute="top" secondItem="jOM-Fj-Ou8" secondAttribute="top" constant="37" id="8y1-cZ-AKt"/>
+                            <constraint firstAttribute="bottom" secondItem="WKp-5e-YgS" secondAttribute="bottom" id="9LG-E7-bGA"/>
+                            <constraint firstAttribute="bottom" secondItem="Ol3-l3-M33" secondAttribute="bottom" constant="100" id="PA9-t3-Lax"/>
+                            <constraint firstItem="WKp-5e-YgS" firstAttribute="top" secondItem="59C-bp-joF" secondAttribute="bottom" constant="10" id="Rum-s0-9ib"/>
+                            <constraint firstItem="59C-bp-joF" firstAttribute="leading" secondItem="jOM-Fj-Ou8" secondAttribute="leading" id="bFl-gS-TZR"/>
+                            <constraint firstAttribute="trailing" secondItem="Ol3-l3-M33" secondAttribute="trailing" constant="17" id="dgb-Gs-GCN"/>
+                            <constraint firstAttribute="trailing" secondItem="59C-bp-joF" secondAttribute="trailing" id="iZt-av-6L9"/>
+                            <constraint firstAttribute="trailing" secondItem="WKp-5e-YgS" secondAttribute="trailing" id="ja3-Pe-A5G"/>
+                            <constraint firstItem="WKp-5e-YgS" firstAttribute="leading" secondItem="jOM-Fj-Ou8" secondAttribute="leading" id="qpg-Dp-TOC"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="tBD-br-E6x"/>
+                    <connections>
+                        <outlet property="customNavigationBar" destination="59C-bp-joF" id="h0e-Yf-puX"/>
+                        <outlet property="itemTableView" destination="WKp-5e-YgS" id="psF-TJ-XTA"/>
+                        <outlet property="plusButton" destination="Ol3-l3-M33" id="Di2-03-J0x"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bUR-bC-R9G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1026.4000000000001" y="770.68965517241384"/>
+        </scene>
+        <!--TownVC-->
+        <scene sceneID="G9f-1g-h1u">
+            <objects>
+                <viewController storyboardIdentifier="TownVC" id="Hms-N7-b6W" customClass="TownVC" customModule="Carrot_Market_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hoq-8z-n8W" customClass="Town">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="0AL-5v-UvG"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w5h-vU-cDa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-167" y="771"/>
+        </scene>
+        <!--Custom Tab Bar Controller-->
+        <scene sceneID="ssU-Qi-ahy">
+            <objects>
+                <tabBarController storyboardIdentifier="CustomTabBarController" automaticallyAdjustsScrollViewInsets="NO" id="1xI-YD-XeC" customClass="CustomTabBarController" customModule="Carrot_Market_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Op0-OY-lrv">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b9o-8P-3K0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="28.985507246376812" y="69.642857142857139"/>
+        </scene>
+        <!--My AroundVC-->
+        <scene sceneID="eUn-qG-udc">
+            <objects>
+                <viewController storyboardIdentifier="MyAroundVC" id="MQJ-aC-C3k" customClass="MyAroundVC" customModule="Carrot_Market_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hVQ-JR-syb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Row-yB-oyM"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HkG-CD-fig" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="575" y="771"/>
+        </scene>
+        <!--ChatVC-->
+        <scene sceneID="cG9-l7-30v">
+            <objects>
+                <viewController storyboardIdentifier="ChatVC" id="w5y-YW-N3d" customClass="ChatVC" customModule="Carrot_Market_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dju-zZ-gJh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="PsD-6G-t8E"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3mm-zq-67q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1400" y="771"/>
+        </scene>
+        <!--My CarrotVC-->
+        <scene sceneID="9af-wG-XRY">
+            <objects>
+                <viewController storyboardIdentifier="MyCarrotVC" id="mZH-0Y-TGZ" customClass="MyCarrotVC" customModule="Carrot_Market_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="K3Y-mg-3bi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="51X-Lr-2Kw"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Z8-d1-8Bb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2216" y="771"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="plusButton" width="63" height="61"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
