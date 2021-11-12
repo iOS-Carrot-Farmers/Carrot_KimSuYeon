@@ -62,7 +62,7 @@ extension ItemDetailVC: UICollectionViewDataSource{
 
 extension ItemDetailVC: UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 165, height: 169)
+        return CGSize(width: sellListCollectionView.frame.width/2 - 25, height: 169)
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets.init(top: 0, left: 15, bottom: 0, right: 15)
