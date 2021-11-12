@@ -16,6 +16,7 @@ class ItemDetailVC: UIViewController {
     @IBOutlet weak var itemScrollView: UIScrollView!
     @IBOutlet weak var itemPageControl: UIPageControl!
     
+    @IBOutlet weak var contentView: UIView!
     
     @IBOutlet weak var userProfileImage: UIImageView!
     @IBOutlet weak var userNameLabel: UILabel!
@@ -70,10 +71,15 @@ extension ItemDetailVC: UIScrollViewDelegate {
         for i in 0..<images.count {
             let imageView = UIImageView()
             let xPos = self.view.frame.width * CGFloat(i)
-            imageView.frame = CGRect(x: xPos, y: 0, width: itemScrollView.bounds.width, height: itemScrollView.bounds.height)
+            
+            imageView.frame = CGRect(x: xPos, y: 0, width: self.view.frame.width, height: itemScrollView.bounds.height)
+           
+            //imageView.frame.size = itemScrollView.frame.size
+//            imageView.frame.size.height = itemScrollView.bounds.height
+//            imageView.frame.origin.x = itemScrollView.frame.width * CGFloat(i)
             imageView.image = images[i]
             itemScrollView.addSubview(imageView)
-            itemScrollView.contentSize.width = imageView.frame.width * CGFloat(i + 1)
+            itemScrollView.contentSize = CGSize(width: imageView.frame.width * CGFloat(images.count) , height: imageView.frame.height)
         }
         
     }
@@ -91,6 +97,9 @@ extension ItemDetailVC: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let value = scrollView.contentOffset.x/scrollView.frame.size.width
         setPageControlSelectedPage(currentPage: Int(round(value)))
+//        let width = scrollView.bounds.size.width
+//        let value = scrollView.contentOffset.x + (width / 2.0)
+//        setPageControlSelectedPage(currentPage: Int(round(value/width)))
     }
 }
 
