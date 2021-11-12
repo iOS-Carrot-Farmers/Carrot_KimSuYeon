@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -14,42 +13,54 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dO6-dT-2cp">
-                    <rect key="frame" x="0.0" y="43" width="414" height="45"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dO6-dT-2cp" customClass="DetailViewNavigationBar" customModule="Carrot_Market_iOS" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ye-wi-cIr">
-                            <rect key="frame" x="32" y="19" width="20" height="22"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ye-wi-cIr">
+                            <rect key="frame" x="10" y="9" width="20" height="26"/>
+                            <color key="tintColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.93725490570000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" image="arrow.backward" catalog="system"/>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RcT-Sh-4bK">
-                            <rect key="frame" x="296" y="11" width="19" height="22"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RcT-Sh-4bK">
+                            <rect key="frame" x="344" y="7" width="19" height="30"/>
+                            <color key="tintColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.93725490570000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" image="square.and.arrow.up" catalog="system"/>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a5a-EP-A5N">
-                            <rect key="frame" x="347" y="6" width="67" height="31"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a5a-EP-A5N">
+                            <rect key="frame" x="370" y="7" width="30" height="32"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" image="settingIcon"/>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oFm-uS-JHE">
-                            <rect key="frame" x="60" y="11" width="67" height="31"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oFm-uS-JHE">
+                            <rect key="frame" x="40" y="7" width="30" height="30"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" image="homeIconDetail"/>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <color key="tintColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.93725490570000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="45" id="rYg-Rt-3GC"/>
+                        <constraint firstAttribute="trailing" secondItem="a5a-EP-A5N" secondAttribute="trailing" constant="14" id="3hF-g9-fbr"/>
+                        <constraint firstItem="9ye-wi-cIr" firstAttribute="leading" secondItem="dO6-dT-2cp" secondAttribute="leading" constant="10" id="3sW-iD-5eH"/>
+                        <constraint firstItem="RcT-Sh-4bK" firstAttribute="top" secondItem="dO6-dT-2cp" secondAttribute="top" constant="7" id="4gS-5b-JBB"/>
+                        <constraint firstItem="a5a-EP-A5N" firstAttribute="leading" secondItem="RcT-Sh-4bK" secondAttribute="trailing" constant="7" id="5IT-c2-pao"/>
+                        <constraint firstItem="oFm-uS-JHE" firstAttribute="top" secondItem="dO6-dT-2cp" secondAttribute="top" constant="7" id="D7n-xp-4oc"/>
+                        <constraint firstAttribute="bottom" secondItem="oFm-uS-JHE" secondAttribute="bottom" constant="7" id="QNA-39-bG5"/>
+                        <constraint firstItem="9ye-wi-cIr" firstAttribute="top" secondItem="dO6-dT-2cp" secondAttribute="top" constant="9" id="RTQ-gn-KCD"/>
+                        <constraint firstAttribute="bottom" secondItem="9ye-wi-cIr" secondAttribute="bottom" constant="9" id="UhJ-qT-oRo"/>
+                        <constraint firstItem="oFm-uS-JHE" firstAttribute="leading" secondItem="9ye-wi-cIr" secondAttribute="trailing" constant="10" id="WMn-Ef-SEU"/>
+                        <constraint firstAttribute="bottom" secondItem="a5a-EP-A5N" secondAttribute="bottom" constant="5" id="eUR-9S-bOX"/>
+                        <constraint firstAttribute="bottom" secondItem="RcT-Sh-4bK" secondAttribute="bottom" constant="7" id="gUx-uL-ted"/>
+                        <constraint firstItem="a5a-EP-A5N" firstAttribute="top" secondItem="dO6-dT-2cp" secondAttribute="top" constant="7" id="omO-A2-JRB"/>
+                        <constraint firstAttribute="height" constant="44" id="rYg-Rt-3GC"/>
                     </constraints>
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <constraints>
-                <constraint firstItem="dO6-dT-2cp" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="43" id="LFy-YC-64j"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="dO6-dT-2cp" secondAttribute="trailing" id="OGV-rK-OhZ"/>
+                <constraint firstItem="dO6-dT-2cp" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="PJJ-fj-OeX"/>
                 <constraint firstItem="dO6-dT-2cp" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="RYH-vF-CBA"/>
             </constraints>
             <point key="canvasLocation" x="132" y="66"/>
@@ -57,9 +68,8 @@
     </objects>
     <resources>
         <image name="arrow.backward" catalog="system" width="128" height="98"/>
+        <image name="homeIconDetail" width="30" height="30"/>
+        <image name="settingIcon" width="30" height="30"/>
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

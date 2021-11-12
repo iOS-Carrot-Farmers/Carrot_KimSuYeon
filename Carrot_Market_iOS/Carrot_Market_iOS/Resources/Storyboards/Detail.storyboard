@@ -19,11 +19,11 @@
             <objects>
                 <viewController storyboardIdentifier="ItemDetailVC" hidesBottomBarWhenPushed="YES" id="NVh-V9-vzi" customClass="ItemDetailVC" customModule="Carrot_Market_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RhN-RO-vtE">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="1500"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UgE-DZ-Wml">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="1500"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" translatesAutoresizingMaskIntoConstraints="NO" id="UgE-DZ-Wml">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wSt-8m-iaJ" userLabel="ContentView">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="1400"/>
@@ -275,12 +275,12 @@
                                 </constraints>
                             </scrollView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Op-Py-abo">
-                                <rect key="frame" x="0.0" y="1397" width="375" height="103"/>
+                                <rect key="frame" x="0.0" y="709" width="375" height="103"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fFr-FX-J1N">
                                         <rect key="frame" x="218" y="17" width="141" height="38"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" image="_chatButton"/>
+                                        <state key="normal" image="chatButton"/>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ngd-pd-dpH">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="1"/>
@@ -309,7 +309,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="가격제안 불가" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a1n-UX-GSt">
-                                        <rect key="frame" x="70" y="42.333333333333258" width="92.666666666666686" height="20.333333333333329"/>
+                                        <rect key="frame" x="70" y="42.333333333333371" width="92.666666666666686" height="20.333333333333329"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -333,23 +333,32 @@
                                     <constraint firstItem="kpt-hZ-LBa" firstAttribute="top" secondItem="ngd-pd-dpH" secondAttribute="bottom" constant="14" id="xxp-Ye-q6x"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tYk-zs-C46" customClass="DetailViewNavigationBar" customModule="Carrot_Market_iOS" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="43" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="4TF-cw-b8q"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="joB-74-KtZ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="UgE-DZ-Wml" secondAttribute="trailing" id="28L-lD-QFa"/>
                             <constraint firstAttribute="bottom" secondItem="UgE-DZ-Wml" secondAttribute="bottom" id="AGD-CK-QuW"/>
+                            <constraint firstAttribute="trailing" secondItem="tYk-zs-C46" secondAttribute="trailing" id="EXQ-fw-NE0"/>
                             <constraint firstAttribute="trailing" secondItem="3Op-Py-abo" secondAttribute="trailing" id="KJH-bq-0ww"/>
                             <constraint firstItem="3Op-Py-abo" firstAttribute="leading" secondItem="RhN-RO-vtE" secondAttribute="leading" id="NDB-5F-1UW"/>
+                            <constraint firstItem="tYk-zs-C46" firstAttribute="leading" secondItem="RhN-RO-vtE" secondAttribute="leading" id="PMX-E9-IFa"/>
                             <constraint firstAttribute="bottom" secondItem="3Op-Py-abo" secondAttribute="bottom" id="Qtj-jz-fRB"/>
+                            <constraint firstItem="tYk-zs-C46" firstAttribute="top" secondItem="RhN-RO-vtE" secondAttribute="top" constant="43" id="g0R-mH-cxC"/>
                             <constraint firstItem="UgE-DZ-Wml" firstAttribute="top" secondItem="RhN-RO-vtE" secondAttribute="top" id="npS-kK-mZw"/>
                             <constraint firstItem="UgE-DZ-Wml" firstAttribute="leading" secondItem="RhN-RO-vtE" secondAttribute="leading" id="wE7-Ub-QNZ"/>
                         </constraints>
                     </view>
-                    <size key="freeformSize" width="375" height="1500"/>
                     <connections>
                         <outlet property="contentView" destination="wSt-8m-iaJ" id="SdB-B8-bT8"/>
                         <outlet property="descriptionLabel" destination="csI-ws-lMb" id="FBS-bH-mIP"/>
+                        <outlet property="detailNavigationBar" destination="tYk-zs-C46" id="Yl1-PF-MRj"/>
                         <outlet property="itemNameLabel" destination="WRm-5l-s5f" id="V7b-mz-qoe"/>
                         <outlet property="itemPageControl" destination="ItI-35-Iol" id="Y6e-qZ-qWC"/>
                         <outlet property="itemPriceLabel" destination="kpt-hZ-LBa" id="Vde-Hd-75r"/>
@@ -372,7 +381,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="_chatButton" width="141" height="38"/>
+        <image name="chatButton" width="141" height="38"/>
         <image name="heartIconLarge" width="30" height="30"/>
         <image name="profile" width="39" height="39"/>
         <image name="smileIcon" width="29" height="29"/>

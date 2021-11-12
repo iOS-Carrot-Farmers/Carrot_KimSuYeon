@@ -12,6 +12,7 @@ class ItemDetailVC: UIViewController {
     // 데이터 전달
     var itemList: ItemData?
 
+    @IBOutlet weak var detailNavigationBar: UIView!
     // 상단 스크롤뷰
     @IBOutlet weak var itemScrollView: UIScrollView!
     @IBOutlet weak var itemPageControl: UIPageControl!
@@ -50,6 +51,7 @@ class ItemDetailVC: UIViewController {
         initCollectionViewData()
         collectionViewDelegate()
         registerCollectionView()
+        initNavigationBar()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -195,5 +197,15 @@ extension ItemDetailVC {
     func registerCollectionView(){
         let sellXib = UINib(nibName: SellListCVC.identifier, bundle: nil)
         sellListCollectionView.register(sellXib, forCellWithReuseIdentifier: SellListCVC.identifier)
+    }
+}
+
+extension ItemDetailVC {
+    private func initNavigationBar() {
+        guard let loadedNib = Bundle.main.loadNibNamed(String(describing: DetailViewNavigationBar.self), owner: self, options: nil) else { return }
+        guard let navigationBar = loadedNib.first as? DetailViewNavigationBar else { return }
+
+        navigationBar.frame = CGRect(x: 0, y: 0, width: detailNavigationBar.frame.width, height: detailNavigationBar.frame.height)
+        detailNavigationBar.addSubview(navigationBar)
     }
 }
