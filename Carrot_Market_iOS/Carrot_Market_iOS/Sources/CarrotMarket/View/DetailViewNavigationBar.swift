@@ -26,6 +26,9 @@ class DetailViewNavigationBar: UIView {
     @IBAction func backButtonDidTap(_ sender: Any) {
         presentToHomeViewController()
     }
+    @IBAction func homeButtonDidTap(_ sender: Any) {
+        presentToHomeViewController()
+    }
     @IBAction func menuButtonDidTap(_ sender: Any) {
         presentNotifyAction()
     }

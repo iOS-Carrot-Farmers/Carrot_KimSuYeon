@@ -46,6 +46,9 @@
                             <rect key="frame" x="40" y="7" width="30" height="30"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" image="homeIconDetail"/>
+                            <connections>
+                                <action selector="homeButtonDidTap:" destination="iN0-l3-epB" eventType="touchUpInside" id="3h1-ac-hMZ"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="tintColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.93725490570000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
