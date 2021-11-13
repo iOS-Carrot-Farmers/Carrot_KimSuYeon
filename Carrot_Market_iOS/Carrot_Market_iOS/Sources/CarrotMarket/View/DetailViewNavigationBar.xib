@@ -21,17 +21,26 @@
                             <color key="tintColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.93725490570000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" image="arrow.backward" catalog="system"/>
+                            <connections>
+                                <action selector="backButtonDidTap:" destination="iN0-l3-epB" eventType="touchUpInside" id="tS7-fg-VSU"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RcT-Sh-4bK">
                             <rect key="frame" x="344" y="7" width="19" height="30"/>
                             <color key="tintColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.93725490570000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" image="square.and.arrow.up" catalog="system"/>
+                            <connections>
+                                <action selector="shareButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="sfm-BU-b1r"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a5a-EP-A5N">
                             <rect key="frame" x="370" y="7" width="30" height="32"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" image="settingIcon"/>
+                            <connections>
+                                <action selector="menuButtonDidTap:" destination="iN0-l3-epB" eventType="touchUpInside" id="Xm9-bT-79N"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oFm-uS-JHE">
                             <rect key="frame" x="40" y="7" width="30" height="30"/>
@@ -63,6 +72,12 @@
                 <constraint firstItem="dO6-dT-2cp" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="PJJ-fj-OeX"/>
                 <constraint firstItem="dO6-dT-2cp" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="RYH-vF-CBA"/>
             </constraints>
+            <connections>
+                <outlet property="actionButton" destination="a5a-EP-A5N" id="9sE-E3-Tky"/>
+                <outlet property="backButton" destination="9ye-wi-cIr" id="dJT-mD-uoV"/>
+                <outlet property="homeButton" destination="oFm-uS-JHE" id="W9g-KE-tcK"/>
+                <outlet property="shareButton" destination="RcT-Sh-4bK" id="fit-ya-adY"/>
+            </connections>
             <point key="canvasLocation" x="132" y="66"/>
         </view>
     </objects>

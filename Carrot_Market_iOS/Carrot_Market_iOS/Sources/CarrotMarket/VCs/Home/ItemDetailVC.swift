@@ -52,6 +52,7 @@ class ItemDetailVC: UIViewController {
         collectionViewDelegate()
         registerCollectionView()
         initNavigationBar()
+        setNotification()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -193,5 +194,25 @@ extension ItemDetailVC {
 
         navigationBar.frame = CGRect(x: 0, y: 0, width: detailNavigationBar.frame.width, height: detailNavigationBar.frame.height)
         detailNavigationBar.addSubview(navigationBar)
+    }
+}
+
+// notification
+extension ItemDetailVC {
+    private func setNotification() {
+        NotificationCenter.default.addObserver(self, selector: #selector(touchBackButton), name: NSNotification.Name(rawValue: "TouchBackButton"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(touchMenuButton), name: NSNotification.Name(rawValue: "TouchMenuButton"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(touchShareButton), name: NSNotification.Name(rawValue: "TouchShareButton"), object: nil)
+    }
+
+    @objc private func touchBackButton() {
+        self.navigationController?.popToRootViewController(animated: true)
+    }
+    
+    @objc private func touchMenuButton() {
+        makeActionSheet()
+    }
+    @objc private func touchShareButton() {
+        makeSharePanel()
     }
 }
