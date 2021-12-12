@@ -52,6 +52,7 @@ class ItemDetailVC: UIViewController {
         collectionViewDelegate()
         registerCollectionView()
         initNavigationBar()
+        setNotification()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -75,10 +76,6 @@ extension ItemDetailVC: UIScrollViewDelegate {
             let xPos = self.view.frame.width * CGFloat(i)
             
             imageView.frame = CGRect(x: xPos, y: 0, width: self.view.frame.width, height: itemScrollView.bounds.height)
-           
-            //imageView.frame.size = itemScrollView.frame.size
-//            imageView.frame.size.height = itemScrollView.bounds.height
-//            imageView.frame.origin.x = itemScrollView.frame.width * CGFloat(i)
             imageView.image = images[i]
             itemScrollView.addSubview(imageView)
             itemScrollView.contentSize = CGSize(width: imageView.frame.width * CGFloat(images.count) , height: imageView.frame.height)
@@ -99,13 +96,10 @@ extension ItemDetailVC: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let value = scrollView.contentOffset.x/scrollView.frame.size.width
         setPageControlSelectedPage(currentPage: Int(round(value)))
-//        let width = scrollView.bounds.size.width
-//        let value = scrollView.contentOffset.x + (width / 2.0)
-//        setPageControlSelectedPage(currentPage: Int(round(value/width)))
     }
 }
 
-// data 모델로 바꾸기..
+// 추후 리팩토링 해야되는 부분
 extension ItemDetailVC {
     func setDataLabel() {
         userNameLabel.text = "쿠리보"
@@ -113,7 +107,6 @@ extension ItemDetailVC {
         
         mannerTempLabel.text = "40.9°C"
         mannerTempLabel.textColor = UIColor(red: 0.22, green: 0.698, blue: 0.302, alpha: 1)
-
         mannerTempLabel.font = UIFont(name: "SFProDisplay-Semibold", size: 16)
         
         if let item = itemList?.itemName {
@@ -155,25 +148,18 @@ extension ItemDetailVC {
         쿨거 하시면 래원의 느린 심   장 박동 실시간으로 들려드립니다.
         """
         descriptionLabel.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
-
         descriptionLabel.font = UIFont(name: "SFProDisplay-Regular", size: 15)
         
         postNotifyLabel.text = " 이 게시글 신고하기"
         postNotifyLabel.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
-
         postNotifyLabel.font = UIFont(name: "SFProDisplay-Semibold", size: 15)
         
-        
-        
         priceSuggestLabel.textColor = UIColor(red: 0.633, green: 0.633, blue: 0.633, alpha: 1)
-
         priceSuggestLabel.font = UIFont(name: "SFProDisplay-Semibold", size: 13)
-
     }
 }
 
 // collectionview 설정해주기
-
 extension ItemDetailVC {
     func initCollectionViewData() {
         sellList.append(contentsOf: [
@@ -200,6 +186,7 @@ extension ItemDetailVC {
     }
 }
 
+// customnavigationbar
 extension ItemDetailVC {
     private func initNavigationBar() {
         guard let loadedNib = Bundle.main.loadNibNamed(String(describing: DetailViewNavigationBar.self), owner: self, options: nil) else { return }
@@ -207,5 +194,25 @@ extension ItemDetailVC {
 
         navigationBar.frame = CGRect(x: 0, y: 0, width: detailNavigationBar.frame.width, height: detailNavigationBar.frame.height)
         detailNavigationBar.addSubview(navigationBar)
+    }
+}
+
+// notification
+extension ItemDetailVC {
+    private func setNotification() {
+        NotificationCenter.default.addObserver(self, selector: #selector(touchBackButton), name: NSNotification.Name(rawValue: "TouchBackButton"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(touchMenuButton), name: NSNotification.Name(rawValue: "TouchMenuButton"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(touchShareButton), name: NSNotification.Name(rawValue: "TouchShareButton"), object: nil)
+    }
+
+    @objc private func touchBackButton() {
+        self.navigationController?.popToRootViewController(animated: true)
+    }
+    
+    @objc private func touchMenuButton() {
+        makeActionSheet()
+    }
+    @objc private func touchShareButton() {
+        makeSharePanel()
     }
 }
